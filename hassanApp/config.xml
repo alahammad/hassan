@@ -39,15 +39,12 @@
     <splash src="res/screen/android/splash-land-mdpi.png" density="port-xxhdpi"/>
     </platform>
 
-      <resource-file src="res/values/colors.xml" target="/app/src/main/res/values/colors.xml" />
+        <icon src="res/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="res/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="res/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+        <icon src="res/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="res/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
 
-  <icon background="@color/background" density="ldpi" foreground="res/icon/android/english_logopng" />
-  <icon background="@color/background" density="mdpi" foreground="res/icon/android/english_logo.png" />
-  <icon background="@color/background" density="hdpi" foreground="res/icon/android/english_logo.png" />
-  <icon background="@color/background" density="xhdpi" foreground="res/icon/android/english_logo.png" />
-  <icon background="@color/background" density="xxhdpi" foreground="res/icon/android/english_logo.png" />
-  <icon background="@color/background" density="xxxhdpi" foreground="res/icon/android/english_logo.png" />
-  
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
