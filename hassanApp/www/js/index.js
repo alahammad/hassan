@@ -19,17 +19,110 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+// document.addEventListener('deviceready', onDeviceReady, false);
 
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+// function onDeviceReady() {
+//     // Cordova is now initialized. Have fun!
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    // document.getElementById('deviceready').classList.add('ready');
-    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=no,hidden=yes');
-ref.addEventListener('loadstart', function() {
-});
-ref.addEventListener('loadstop', function() {
-  ref.show();
-});
-}
+//     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+//     // document.getElementById('deviceready').classList.add('ready');
+//     var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=no,hidden=yes');
+// ref.addEventListener('loadstart', function() {
+// });
+// ref.addEventListener('loadstop', function() {
+//   ref.show();
+// });
+// }
+
+
+
+var app = {
+    // Application Constructor
+    initialize: function() {
+        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+
+  //       console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+  //   	var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=no,hidden=yes');
+  //   	ref.addEventListener('loadstart', function() {});
+		// ref.addEventListener('loadstop', function() {
+		//   ref.show();
+		// });
+    },
+
+    // deviceready Event Handler
+    //
+    // Bind any cordova events here. Common events are:
+    // 'pause', 'resume', etc.
+    onDeviceReady: function() {
+        this.receivedEvent('deviceready');
+        console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+        var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=no,hidden=yes');
+            	ref.addEventListener('loadstart', function() {});
+		ref.addEventListener('loadstop', function() {
+		  ref.show();
+		});
+    },
+
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+      
+        console.log('Received Event: ' + id);
+
+        //START ONESIGNAL CODE
+        //Remove this method to stop OneSignal Debugging
+        window.plugins.OneSignal.setLogLevel({logLevel: 6, visualLevel: 0});
+  
+        var notificationOpenedCallback = function(jsonData) {
+            var notificationData = JSON.stringify(jsonData)
+            console.log('notificationOpenedCallback: ' + notificationData);
+            var notificationID = jsonData.notification.payload.notificationID;
+            console.log('notificationID: ' + notificationID);
+            var notificationData = jsonData.notification.payload.additionalData.foo;
+            console.log('notificationData: ' + notificationData);
+        };
+        // Set your iOS Settings
+        var iosSettings = {};
+        iosSettings["kOSSettingsKeyAutoPrompt"] = false;
+        iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
+               
+        window.plugins.OneSignal
+          .startInit("f3e32320-8d94-4127-aa00-22067f07a1f8")
+          .handleNotificationReceived(function(jsonData) {
+            // alert(jsonData['payload']['body']);
+            navigator.notification.alert(
+			    jsonData['payload']['body'],  // message
+			    'HASSAN',            // title
+			    'HASSAN'                  // buttonName
+			);
+          })
+          .handleNotificationOpened(notificationOpenedCallback)
+          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+          .iOSSettings(iosSettings)
+          .endInit();
+
+        // if (addedObservers == false) {
+        //     addedObservers = true;
+
+        //     window.plugins.OneSignal.addEmailSubscriptionObserver(function(stateChanges) {
+        //         console.log("Email subscription state changed: \n" + JSON.stringify(stateChanges, null, 2));
+        //     });
+
+        //     window.plugins.OneSignal.addSubscriptionObserver(function(stateChanges) {
+        //         console.log("Push subscription state changed: " + JSON.stringify(stateChanges, null, 2));
+        //     });
+
+        //     window.plugins.OneSignal.addPermissionObserver(function(stateChanges) {
+        //         console.log("Push permission state changed: " + JSON.stringify(stateChanges, null, 2));
+        //     });
+        // }
+        // The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. 
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 6)
+        window.plugins.OneSignal.promptForPushNotificationsWithUserResponse(function(accepted) {
+            console.log("User accepted notifications: " + accepted);
+        });
+    }
+};
+
+app.initialize();
+
