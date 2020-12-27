@@ -23,6 +23,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "OneSignal"
       ]
+    },
+    {
+      "id": "cordova-plugin-fetch.FetchPlugin",
+      "file": "plugins/cordova-plugin-fetch/www/fetch.js",
+      "pluginId": "cordova-plugin-fetch",
+      "clobbers": [
+        "cordovaFetch"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -30,6 +38,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-inappbrowser": "4.1.0",
     "cordova-plugin-splashscreen": "6.0.0",
     "cordova-plugin-whitelist": "1.3.4",
-    "onesignal-cordova-plugin": "2.11.2"
+    "onesignal-cordova-plugin": "2.11.2",
+    "cordova-plugin-fetch": "0.1.0"
   };
 });

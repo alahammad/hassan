@@ -17,6 +17,7 @@
  * under the License.
  */
 
+ 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 // document.addEventListener('deviceready', onDeviceReady, false);
@@ -33,8 +34,10 @@
 //   ref.show();
 // });
 // }
+ 
 
 var app = {
+  
   // Application Constructor
   initialize: function () {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -61,9 +64,24 @@ var app = {
     });
     ref.addEventListener('loadstop', function () {
       console.log('load finished');
-
     });
-  },
+      
+    cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')
+  .then(function(response) {
+    return response.json()
+  }).then(function(json) {
+    console.log('parsed json', json)
+    if(json == true) {
+      navigator.notification.alert(
+                     "upi sjpi;d jdis pupdate"
+      );
+    }
+  }).catch(function(ex) {
+    console.log('parsing failed', ex)
+  })
+
+
+   },
 
   // Update DOM on a Received Event
   receivedEvent: function (id) {

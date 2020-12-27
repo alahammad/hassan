@@ -17,6 +17,7 @@
  * under the License.
  */
 
+
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 // document.addEventListener('deviceready', onDeviceReady, false);
@@ -34,7 +35,9 @@
 // });
 // }
 
+
 var app = {
+
   // Application Constructor
   initialize: function () {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -55,14 +58,29 @@ var app = {
     this.receivedEvent('deviceready');
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,hidden=yes,disallowoverscroll=true, presentationstyle=fullscreen,transitionstyle=crossdissolve, toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
-    ref.addEventListener('loadstart', function () { 
+    ref.addEventListener('loadstart', function () {
       console.log('loaded started');
       ref.show();
     });
     ref.addEventListener('loadstop', function () {
       console.log('load finished');
-
     });
+
+    cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')
+      .then(function (response) {
+        return response.json()
+      }).then(function (json) {
+        console.log('parsed json', json)
+        if (json == true) {
+          navigator.notification.alert(
+            "Please update the app to the latest"
+          );
+        }
+      }).catch(function (ex) {
+        console.log('parsing failed', ex)
+      })
+
+
   },
 
   // Update DOM on a Received Event

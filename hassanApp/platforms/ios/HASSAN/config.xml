@@ -35,6 +35,9 @@
     <feature name="OneSignalPush">
         <param name="ios-package" value="OneSignalPush" />
     </feature>
+    <feature name="FetchPlugin">
+        <param name="ios-package" value="FetchPlugin" />
+    </feature>
     <name>HASSAN</name>
     <description>
         Application for hassan store
