@@ -49,13 +49,15 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="DisallowOverscroll" value="true" />
+        <preference name="UIWebViewBounce" value="false" />
+
     </platform>
 
 
 <preference name="SplashScreenDelay" value="5000" />
 <preference name="FadeSplashScreen" value="true"/>
 <preference name="ShowSplashScreenSpinner" value="false"/>
-<preference name="DisallowOverscroll" value="true" />
 
 
 </widget>
