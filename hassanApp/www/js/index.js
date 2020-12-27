@@ -54,7 +54,7 @@ var app = {
   onDeviceReady: function () {
     this.receivedEvent('deviceready');
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=no,hidden=yes,disallowoverscroll=true');
+    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,hidden=yes,disallowoverscroll=true, presentationstyle=fullscreen,transitionstyle=crossdissolve, toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
     ref.addEventListener('loadstart', function () { 
       console.log('loaded started');
       ref.show();
