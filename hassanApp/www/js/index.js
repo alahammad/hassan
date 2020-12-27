@@ -89,7 +89,7 @@ var app = {
     iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
 
     window.plugins.OneSignal
-      .startInit("f3e32320-8d94-4127-aa00-22067f07a1f8")
+      .startInit("f5763949-fca0-41e8-b775-98fd3754cd3b")
       .handleNotificationReceived(function (jsonData) {
         // alert(jsonData['payload']['body']);
         navigator.notification.alert(
