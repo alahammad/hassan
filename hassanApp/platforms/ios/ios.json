@@ -26,11 +26,11 @@
             },
             {
               "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
-              "count": 1
+              "count": 2
             },
             {
               "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
-              "count": 1
+              "count": 2
             }
           ]
         }

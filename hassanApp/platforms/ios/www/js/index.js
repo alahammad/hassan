@@ -75,29 +75,24 @@ var app = {
       }).then(function (json) {
       	console.log('@@platform@@',device.platform)
         if (device.platform == "Android"){
-        	if (json['android_force_update'] == false){
+        	if (json.android_force_update == false){
         		 // console.log('json['android_force_update']')
         		cordova.getAppVersion.getVersionNumber(function (version) {
-					if (json['android_version'] != version) {
+					if (json.android_version != version) {
+						 navigator.notification.alert(json.force_update_message);
+					}
+				});
+			}
+        }
+   		else if (device.platform == 'OSX'){
+        	if (json['ios_force_update'] == true){
+        		cordova.getAppVersion.getVersionNumber(function (version) {
+					if (json['ios_version'] != version) {
 						          navigator.notification.alert(json['force_update_message']);
 					}
 				});
 			}
         }
-   // else if (device.platform == 'OSX'){
-   //      	if (json['ios_force_update'] == true){
-   //      		cordova.getAppVersion.getVersionNumber(function (version) {
-			// 		if (json['ios_version'] != version) {
-			// 			          navigator.notification.alert(json['force_update_message']);
-			// 		}
-			// 	});
-			// }
-   //      }
-        // if (json == true) {
-        //   navigator.notification.alert(
-        //     "Please update the app to the latest"
-        //   );
-        // }
       }).catch(function (ex) {
         console.log('parsing failed', ex)
       })

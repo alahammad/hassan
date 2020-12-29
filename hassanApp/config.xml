@@ -51,7 +51,7 @@
         <allow-intent href="itms-apps:*" />
         <preference name="DisallowOverscroll" value="true" />
         <preference name="UIWebViewBounce" value="false" />
-
+        <icon src="res/ios/icon.png"/>
     </platform>
 
 
