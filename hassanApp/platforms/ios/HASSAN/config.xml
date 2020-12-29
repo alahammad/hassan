@@ -66,6 +66,7 @@
     <icon density="xxxhdpi" src="res/mipmap-xxxhdpi/ic_launcher.png" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <icon src="res/icon/ios/icon.png" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="true" />

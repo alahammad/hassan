@@ -84,10 +84,12 @@ var app = {
             });
           }
         }
-        else if (device.platform == 'OSX') {
-          if (json['ios_force_update'] == true) {
+        else if (device.platform == 'iOS') {
+          console.log('checking non force update for ios');
+          
+          if (json.ios_force_update  == true) {
             cordova.getAppVersion.getVersionNumber(function (version) {
-              if (json['ios_version'] != version) {
+              if (json.ios_version != version) {
                 navigator.notification.alert(json['force_update_message']);
               }
             });
