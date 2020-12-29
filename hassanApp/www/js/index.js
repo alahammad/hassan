@@ -41,6 +41,9 @@ var app = {
   // Application Constructor
   initialize: function () {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+ 	document.addEventListener("backbutton", this.onBackKeyDown, false);
+
+
 
     //       console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     //   	var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=no,hidden=yes');
@@ -70,11 +73,25 @@ var app = {
       .then(function (response) {
         return response.json()
       }).then(function (json) {
-        console.log('parsed json', json)
-        if (json == true) {
-          navigator.notification.alert(
-            "Please update the app to the latest"
-          );
+      	console.log('@@platform@@',device.platform)
+        if (device.platform == "Android"){
+        	if (json.android_force_update == false){
+        		 // console.log('json['android_force_update']')
+        		cordova.getAppVersion.getVersionNumber(function (version) {
+					if (json.android_version != version) {
+						 navigator.notification.alert(json.force_update_message);
+					}
+				});
+			}
+        }
+   		else if (device.platform == 'OSX'){
+        	if (json['ios_force_update'] == true){
+        		cordova.getAppVersion.getVersionNumber(function (version) {
+					if (json['ios_version'] != version) {
+						          navigator.notification.alert(json['force_update_message']);
+					}
+				});
+			}
         }
       }).catch(function (ex) {
         console.log('parsing failed', ex)
@@ -107,7 +124,7 @@ var app = {
     iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
 
     window.plugins.OneSignal
-      .startInit("f5763949-fca0-41e8-b775-98fd3754cd3b")
+      .startInit("f3e32320-8d94-4127-aa00-22067f07a1f8")
       .handleNotificationReceived(function (jsonData) {
         // alert(jsonData['payload']['body']);
         navigator.notification.alert(
@@ -141,7 +158,11 @@ var app = {
     window.plugins.OneSignal.promptForPushNotificationsWithUserResponse(function (accepted) {
       console.log("User accepted notifications: " + accepted);
     });
-  }
+  },
+  onBackKeyDown: function()
+	{
+	    console.log("something");
+	},
 };
 
 app.initialize();

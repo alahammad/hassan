@@ -38,6 +38,12 @@
     <feature name="FetchPlugin">
         <param name="ios-package" value="FetchPlugin" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="AppVersion">
+        <param name="ios-package" value="AppVersion" />
+    </feature>
     <name>HASSAN</name>
     <description>
         Application for hassan store
