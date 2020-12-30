@@ -52,11 +52,19 @@
         <preference name="DisallowOverscroll" value="true" />
         <preference name="UIWebViewBounce" value="false" />
         <icon src="res/icon/ios/icon.png"/>
+            
+        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+        <splash src="res/screen/ios/Default@2x~universal~comany.png" />
+        <splash src="res/screen/ios/Default@2x~universal~comcom.png" />
+        <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
+        <splash src="res/screen/ios/Default@3x~universal~anycom.png" />
+        <splash src="res/screen/ios/Default@3x~universal~comany.png" />
+
     </platform>
 
 
 <preference name="SplashScreenDelay" value="5000" />
-<preference name="FadeSplashScreen" value="true"/>
+<preference name="FadeSplashScreen" value="false"/>
 <preference name="ShowSplashScreenSpinner" value="false"/>
 
 

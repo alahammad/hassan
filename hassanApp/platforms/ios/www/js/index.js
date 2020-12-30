@@ -63,10 +63,11 @@ var app = {
     var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,hidden=yes,disallowoverscroll=true, presentationstyle=fullscreen,transitionstyle=crossdissolve, toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
     ref.addEventListener('loadstart', function () {
       console.log('loaded started');
-      ref.show();
     });
     ref.addEventListener('loadstop', function () {
       console.log('load finished');
+      ref.show();
+
     });
 
     cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')

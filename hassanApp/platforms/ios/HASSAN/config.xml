@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.hassans" ios-CFBundleVersion="8" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="8" id="com.hassans" ios-CFBundleVersion="8" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="CDVWebViewEngine">
         <param name="ios-package" value="CDVWebViewEngine" />
     </feature>
@@ -67,6 +67,12 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon src="res/icon/ios/icon.png" />
+    <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+    <splash src="res/screen/ios/Default@2x~universal~comany.png" />
+    <splash src="res/screen/ios/Default@2x~universal~comcom.png" />
+    <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
+    <splash src="res/screen/ios/Default@3x~universal~anycom.png" />
+    <splash src="res/screen/ios/Default@3x~universal~comany.png" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="true" />
@@ -81,7 +87,7 @@
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="SplashScreenDelay" value="5000" />
-    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreen" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="UIWebViewBounce" value="false" />
 </widget>
