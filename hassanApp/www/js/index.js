@@ -60,49 +60,57 @@ var app = {
   onDeviceReady: function () {
     this.receivedEvent('deviceready');
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,hidden=yes,disallowoverscroll=true, presentationstyle=fullscreen,transitionstyle=crossdissolve, toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
+    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,closebuttoncaption=,hidden=yes,disallowoverscroll=true,presentationstyle=fullscreen,transitionstyle=crossdissolve,toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
     ref.addEventListener('loadstart', function () {
       console.log('loaded started');
     });
     ref.addEventListener('loadstop', function () {
       console.log('load finished');
       ref.show();
-
+      app.checkForceUpdate()
     });
-
-    cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')
-      .then(function (response) {
-        return response.json()
-      }).then(function (json) {
-        console.log('@@platform@@', device.platform)
-        if (device.platform == "Android") {
-          if (json.android_force_update == false) {
-            // console.log('json['android_force_update']')
-            cordova.getAppVersion.getVersionNumber(function (version) {
-              if (json.android_version != version) {
-                navigator.notification.alert(json.force_update_message);
-              }
-            });
-          }
-        }
-        else if (device.platform == 'iOS') {
-          console.log('checking non force update for ios');
-          
-          if (json.ios_force_update  == true) {
-            cordova.getAppVersion.getVersionNumber(function (version) {
-              if (json.ios_version != version) {
-                navigator.notification.alert(json['force_update_message']);
-              }
-            });
-          }
-        }
-      }).catch(function (ex) {
-        console.log('parsing failed', ex)
-      })
-
-
   },
 
+  checkForceUpdate: function() {
+
+    cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')
+    .then(function (response) {
+      return response.json()
+    }).then(function (json) {
+      console.log('@@platform@@', device.platform)
+      if (device.platform == "Android") {
+        if (json.android_force_update == false) {
+          // console.log('json['android_force_update']')
+          cordova.getAppVersion.getVersionNumber(function (version) {
+            if (json.android_version != version) {
+              navigator.notification.alert(json.force_update_message, () => {
+                console.log('user clicked on ok button');
+                window.open('itms-apps://apple.com/app/id1494694404','_system', 'location=yes');
+                app.checkForceUpdate()
+              })
+            }
+          });
+        }
+      }
+      else if (device.platform == 'iOS') {
+        console.log('checking non force update for ios');
+        
+        if (json.ios_force_update  == true) {
+          cordova.getAppVersion.getVersionNumber(function (version) {
+            if (json.ios_version != version) {
+              navigator.notification.alert(json.force_update_message, () => {
+                console.log('user clicked on ok button');
+                window.open('itms-apps://apple.com/app/id1494694404','_system', 'location=yes');
+                app.checkForceUpdate()
+              });
+            }
+          });
+        }
+      }
+    }).catch(function (ex) {
+      console.log('parsing failed', ex)
+    })
+  },
   // Update DOM on a Received Event
   receivedEvent: function (id) {
     var parentElement = document.getElementById(id);
