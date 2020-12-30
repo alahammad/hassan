@@ -41,7 +41,7 @@ var app = {
   // Application Constructor
   initialize: function () {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
- 	document.addEventListener("backbutton", this.onBackKeyDown, false);
+    document.addEventListener("backbutton", this.onBackKeyDown, false);
 
 
 
@@ -73,31 +73,28 @@ var app = {
       .then(function (response) {
         return response.json()
       }).then(function (json) {
-      	console.log('@@platform@@',device.platform)
-        if (device.platform == "Android"){
-        	if (json['android_force_update'] == false){
-        		 // console.log('json['android_force_update']')
-        		cordova.getAppVersion.getVersionNumber(function (version) {
-					if (json['android_version'] != version) {
-						          navigator.notification.alert(json['force_update_message']);
-					}
-				});
-			}
+        console.log('@@platform@@', device.platform)
+        if (device.platform == "Android") {
+          if (json.android_force_update == false) {
+            // console.log('json['android_force_update']')
+            cordova.getAppVersion.getVersionNumber(function (version) {
+              if (json.android_version != version) {
+                navigator.notification.alert(json.force_update_message);
+              }
+            });
+          }
         }
-   // else if (device.platform == 'OSX'){
-   //      	if (json['ios_force_update'] == true){
-   //      		cordova.getAppVersion.getVersionNumber(function (version) {
-			// 		if (json['ios_version'] != version) {
-			// 			          navigator.notification.alert(json['force_update_message']);
-			// 		}
-			// 	});
-			// }
-   //      }
-        // if (json == true) {
-        //   navigator.notification.alert(
-        //     "Please update the app to the latest"
-        //   );
-        // }
+        else if (device.platform == 'iOS') {
+          console.log('checking non force update for ios');
+          
+          if (json.ios_force_update  == true) {
+            cordova.getAppVersion.getVersionNumber(function (version) {
+              if (json.ios_version != version) {
+                navigator.notification.alert(json['force_update_message']);
+              }
+            });
+          }
+        }
       }).catch(function (ex) {
         console.log('parsing failed', ex)
       })
@@ -164,10 +161,9 @@ var app = {
       console.log("User accepted notifications: " + accepted);
     });
   },
-  onBackKeyDown: function()
-	{
-	    console.log("something");
-	},
+  onBackKeyDown: function () {
+    console.log("something");
+  },
 };
 
 app.initialize();
