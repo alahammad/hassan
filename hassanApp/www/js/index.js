@@ -60,14 +60,15 @@ var app = {
   onDeviceReady: function () {
     this.receivedEvent('deviceready');
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,closebuttoncaption=,hidden=yes,disallowoverscroll=true,presentationstyle=fullscreen,transitionstyle=crossdissolve,toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
+    var ref = cordova.InAppBrowser.open('https://hassans.com/', '_blank', 'location=no,toolbar=yes,closebuttoncaption=yes,hidden=yes,disallowoverscroll=true,presentationstyle=fullscreen,transitionstyle=crossdissolve,toolbarcolor=#ffffff,toolbartranslucent=yes,usewkwebview=yes');
+    app.checkForceUpdate()
     ref.addEventListener('loadstart', function () {
       console.log('loaded started');
     });
     ref.addEventListener('loadstop', function () {
       console.log('load finished');
       ref.show();
-      app.checkForceUpdate()
+      
     });
   },
 
@@ -172,6 +173,7 @@ var app = {
   },
   onBackKeyDown: function () {
     console.log("something");
+    app.exitApp();
   },
 };
 
