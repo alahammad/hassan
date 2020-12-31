@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/HASSAN.app</string>
+		<key>Architectures</key>
+		<array>
+			<string>arm64</string>
+		</array>
+		<key>CFBundleIdentifier</key>
+		<string>com.hassans</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0.4</string>
+		<key>CFBundleVersion</key>
+		<string>9</string>
+		<key>SigningIdentity</key>
+		<string>Apple Development: Moaath Othman (PCF7VL5P8V)</string>
+		<key>Team</key>
+		<string>9PTP4NSVM4</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2020-12-30T21:50:48Z</date>
+	<key>Name</key>
+	<string>HASSAN</string>
+	<key>SchemeName</key>
+	<string>HASSAN</string>
+</dict>
+</plist>
