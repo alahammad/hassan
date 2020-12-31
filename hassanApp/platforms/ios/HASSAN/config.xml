@@ -88,6 +88,6 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="SplashScreenDelay" value="5000" />
     <preference name="FadeSplashScreen" value="false" />
-    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
     <preference name="UIWebViewBounce" value="false" />
 </widget>

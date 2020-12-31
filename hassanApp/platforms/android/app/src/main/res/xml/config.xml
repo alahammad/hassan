@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="8" id="com.hassans" ios-CFBundleVersion="9" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="FetchPlugin">
+        <param name="android-package" value="com.adobe.phonegap.fetch.FetchPlugin" />
+    </feature>
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
+    </feature>
+    <name>HASSAN</name>
+    <description>
+        Application for hassan store
+    </description>
+    <author email="ip7@live.de" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon density="mdpi" src="res/mipmap-mdpi/ic_launcher.png" />
+    <icon density="hdpi" src="res/mipmap-hdpi/ic_launcher.png" />
+    <icon density="xhdpi" src="res/mipmap-xhdpi/ic_launcher.png" />
+    <icon density="xxhdpi" src="res/mipmap-xxhdpi/ic_launcher.png" />
+    <icon density="xxxhdpi" src="res/mipmap-xxxhdpi/ic_launcher.png" />
+    <allow-intent href="market:*" />
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+        <application android:usesCleartextTraffic="true" />
+        <application android:networkSecurityConfig="@xml/network_security_config" />
+    </edit-config>
+    <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.jpg" />
+    <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.jpg" />
+    <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.jpg" />
+    <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.jpg" />
+    <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.jpg" />
+    <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.jpg" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+</widget>
