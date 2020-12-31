@@ -64,6 +64,18 @@
             }
           ]
         }
+      },
+      "HASSAN/HASSAN-Info.plist": {
+        "parents": {
+          "NSLocationWhenInUseUsageDescription": [
+            {
+              "xml": "<string>We would like to use your location for delivery</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ]
+        }
       }
     }
   },
