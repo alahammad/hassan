@@ -80,7 +80,7 @@ var app = {
     }).then(function (json) {
       console.log('@@platform@@', device.platform)
       if (device.platform == "Android") {
-        if (json.android_force_update == false) {
+        if (json.android_force_update == true) {
           // console.log('json['android_force_update']')
           cordova.getAppVersion.getVersionNumber(function (version) {
             if (json.android_version != version) {
