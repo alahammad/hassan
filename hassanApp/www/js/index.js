@@ -73,7 +73,7 @@ var app = {
 
   checkForceUpdate: function() {
 
-    cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')
+    cordovaFetch('https://hassans.com/en_ha/rest/V1/forceupdate')
     .then(function (response) {
       return response.json()
     }).then(function (json) {
