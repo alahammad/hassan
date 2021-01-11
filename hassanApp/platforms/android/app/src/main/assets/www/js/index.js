@@ -74,7 +74,7 @@ var app = {
 
   checkForceUpdate: function() {
 
-    cordovaFetch('https://staging.hassans.com/en_ha/rest/V1/forceupdate')
+    cordovaFetch('https://hassans.com/en_ha/rest/V1/forceupdate')
     .then(function (response) {
       return response.json()
     }).then(function (json) {
@@ -136,7 +136,7 @@ var app = {
     iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
 
     window.plugins.OneSignal
-      .startInit("f3e32320-8d94-4127-aa00-22067f07a1f8")
+      .startInit("67a878d1-8502-4e02-9d00-24ae57675f64")
       .handleNotificationReceived(function (jsonData) {
         // alert(jsonData['payload']['body']);
         navigator.notification.alert(

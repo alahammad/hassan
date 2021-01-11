@@ -25,12 +25,20 @@
            <application android:networkSecurityConfig="@xml/network_security_config" />
           </edit-config>
         <!-- you can use any density that exists in the Android project -->
-       <splash src="res/screen/android/splash-port-hdpi.jpg" density="port-hdpi"/>
-        <splash src="res/screen/android/splash-port-ldpi.jpg" density="port-ldpi"/>
-        <splash src="res/screen/android/splash-port-mdpi.jpg" density="port-mdpi"/>
-        <splash src="res/screen/android/splash-port-xhdpi.jpg" density="port-xhdpi"/>
-        <splash src="res/screen/android/splash-port-xxhdpi.jpg" density="port-xxhdpi"/>
-        <splash src="res/screen/android/splash-port-xxxhdpi.jpg" density="port-xxxhdpi"/>
+      
+        <splash src="res/screen/android/hdpi-land.jpg" density="land-hdpi"/>
+        <splash src="res/screen/android/ldpi-land.jpg" density="land-ldpi"/>
+        <splash src="res/screen/android/mdpi-land.jpg" density="land-mdpi"/>
+        <splash src="res/screen/android/xhdpi-land.jpg" density="land-xhdpi"/>
+        <splash src="res/screen/android/xxhdpi-land.jpg" density="land-xxhdpi"/>
+
+        <splash src="res/screen/android/hdpi-port.jpg" density="port-hdpi"/>
+        <splash src="res/screen/android/ldpi-port.jpg" density="port-ldpi"/>
+        <splash src="res/screen/android/mdpi-port.jpg" density="port-mdpi"/>
+        <splash src="res/screen/android/xhdpi-port.jpg" density="port-xhdpi"/>
+        <splash src="res/screen/android/xxhdpi-port.jpg" density="port-xxhdpi"/>
+
+
 
     </platform>
 
@@ -47,12 +55,12 @@
         <preference name="UIWebViewBounce" value="false" />
         <icon src="res/icon/ios/icon.png"/>
             
-        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
-        <splash src="res/screen/ios/Default@2x~universal~comany.png" />
-        <splash src="res/screen/ios/Default@2x~universal~comcom.png" />
-        <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
-        <splash src="res/screen/ios/Default@3x~universal~anycom.png" />
-        <splash src="res/screen/ios/Default@3x~universal~comany.png" />
+        <splash src="res/screen/ios/Default@2x~universal~anyany.jpg" />
+        <splash src="res/screen/ios/Default@2x~universal~comany.jpg" />
+        <splash src="res/screen/ios/Default@2x~universal~comcom.jpg" />
+        <splash src="res/screen/ios/Default@3x~universal~anyany.jpg" />
+        <splash src="res/screen/ios/Default@3x~universal~anycom.jpg" />
+        <splash src="res/screen/ios/Default@3x~universal~comany.jpg" />
   <edit-config file="HASSAN/HASSAN-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
              <string>We would like to use your location for delivery</string>
         </edit-config>
