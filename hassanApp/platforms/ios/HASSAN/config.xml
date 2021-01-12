@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="8" id="com.hassans" ios-CFBundleVersion="11" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="8" id="com.hassans" ios-CFBundleVersion="12" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="CDVWebViewEngine">
         <param name="ios-package" value="CDVWebViewEngine" />
     </feature>
@@ -67,12 +67,12 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon src="res/icon/ios/icon.png" />
-    <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
-    <splash src="res/screen/ios/Default@2x~universal~comany.png" />
-    <splash src="res/screen/ios/Default@2x~universal~comcom.png" />
-    <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
-    <splash src="res/screen/ios/Default@3x~universal~anycom.png" />
-    <splash src="res/screen/ios/Default@3x~universal~comany.png" />
+    <splash src="res/screen/ios/Default@2x~universal~anyany.jpg" />
+    <splash src="res/screen/ios/Default@2x~universal~comany.jpg" />
+    <splash src="res/screen/ios/Default@2x~universal~comcom.jpg" />
+    <splash src="res/screen/ios/Default@3x~universal~anyany.jpg" />
+    <splash src="res/screen/ios/Default@3x~universal~anycom.jpg" />
+    <splash src="res/screen/ios/Default@3x~universal~comany.jpg" />
     <edit-config file="HASSAN/HASSAN-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>We would like to use your location for delivery</string>
     </edit-config>
