@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="8" id="com.hassans" ios-CFBundleVersion="14" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10" id="com.hassans" ios-CFBundleVersion="14" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -51,16 +51,16 @@
         <application android:usesCleartextTraffic="true" />
         <application android:networkSecurityConfig="@xml/network_security_config" />
     </edit-config>
-    <splash density="land-hdpi" src="res/screen/android/hdpi-land.jpg" />
-    <splash density="land-ldpi" src="res/screen/android/ldpi-land.jpg" />
-    <splash density="land-mdpi" src="res/screen/android/mdpi-land.jpg" />
-    <splash density="land-xhdpi" src="res/screen/android/xhdpi-land.jpg" />
-    <splash density="land-xxhdpi" src="res/screen/android/xxhdpi-land.jpg" />
-    <splash density="port-hdpi" src="res/screen/android/hdpi-port.jpg" />
-    <splash density="port-ldpi" src="res/screen/android/ldpi-port.jpg" />
-    <splash density="port-mdpi" src="res/screen/android/mdpi-port.jpg" />
-    <splash density="port-xhdpi" src="res/screen/android/xhdpi-port.jpg" />
-    <splash density="port-xxhdpi" src="res/screen/android/xxhdpi-port.jpg" />
+    <splash density="land-hdpi" src="res/screen/android/hdpi-land.png" />
+    <splash density="land-ldpi" src="res/screen/android/ldpi-land.png" />
+    <splash density="land-mdpi" src="res/screen/android/mdpi-land.png" />
+    <splash density="land-xhdpi" src="res/screen/android/xhdpi-land.png" />
+    <splash density="land-xxhdpi" src="res/screen/android/xxhdpi-land.png" />
+    <splash density="port-hdpi" src="res/screen/android/hdpi-port.png" />
+    <splash density="port-ldpi" src="res/screen/android/ldpi-port.png" />
+    <splash density="port-mdpi" src="res/screen/android/mdpi-port.png" />
+    <splash density="port-xhdpi" src="res/screen/android/xhdpi-port.png" />
+    <splash density="port-xxhdpi" src="res/screen/android/xxhdpi-port.png" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="SplashScreenDelay" value="5000" />
     <preference name="FadeSplashScreen" value="false" />

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.hassans" version="1.0.4" ios-CFBundleVersion="14" android-versionCode="8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.hassans" version="1.0.4" ios-CFBundleVersion="14" android-versionCode="10" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HASSAN</name>
     <description>
         Application for hassan store
@@ -26,17 +26,17 @@
           </edit-config>
         <!-- you can use any density that exists in the Android project -->
       
-        <splash src="res/screen/android/hdpi-land.jpg" density="land-hdpi"/>
-        <splash src="res/screen/android/ldpi-land.jpg" density="land-ldpi"/>
-        <splash src="res/screen/android/mdpi-land.jpg" density="land-mdpi"/>
-        <splash src="res/screen/android/xhdpi-land.jpg" density="land-xhdpi"/>
-        <splash src="res/screen/android/xxhdpi-land.jpg" density="land-xxhdpi"/>
+        <splash src="res/screen/android/hdpi-land.png" density="land-hdpi"/>
+        <splash src="res/screen/android/ldpi-land.png" density="land-ldpi"/>
+        <splash src="res/screen/android/mdpi-land.png" density="land-mdpi"/>
+        <splash src="res/screen/android/xhdpi-land.png" density="land-xhdpi"/>
+        <splash src="res/screen/android/xxhdpi-land.png" density="land-xxhdpi"/>
 
-        <splash src="res/screen/android/hdpi-port.jpg" density="port-hdpi"/>
-        <splash src="res/screen/android/ldpi-port.jpg" density="port-ldpi"/>
-        <splash src="res/screen/android/mdpi-port.jpg" density="port-mdpi"/>
-        <splash src="res/screen/android/xhdpi-port.jpg" density="port-xhdpi"/>
-        <splash src="res/screen/android/xxhdpi-port.jpg" density="port-xxhdpi"/>
+        <splash src="res/screen/android/hdpi-port.png" density="port-hdpi"/>
+        <splash src="res/screen/android/ldpi-port.png" density="port-ldpi"/>
+        <splash src="res/screen/android/mdpi-port.png" density="port-mdpi"/>
+        <splash src="res/screen/android/xhdpi-port.png" density="port-xhdpi"/>
+        <splash src="res/screen/android/xxhdpi-port.png" density="port-xxhdpi"/>
 
 
 
